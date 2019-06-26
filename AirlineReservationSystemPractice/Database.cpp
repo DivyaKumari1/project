@@ -7,7 +7,7 @@
 
 
 // database
-//-------
+//-----------
 using namespace std;
 
 namespace AirlineReservationSystemApp {
