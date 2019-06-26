@@ -27,7 +27,7 @@ namespace AirlineReservationSystemApp {
 
 	}
 
-	Booking& Database::addTicket(Flight fl, Passenger pa, std::string source, std::string destination)
+	/*Booking& Database::addTicket(Flight fl, Passenger pa, std::string source, std::string destination)
 	{
 		
 	
@@ -41,7 +41,7 @@ namespace AirlineReservationSystemApp {
 		
 
 	}
-		
+		*/
 		
 		//displaySearchedFlight(pSource, pDestination);
 		
