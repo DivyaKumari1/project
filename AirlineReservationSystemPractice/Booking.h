@@ -2,6 +2,7 @@
 #include<string>
 #include "Flight.h"
 #include "Passenger.h"
+#include <vector>
 
 namespace AirlineReservationSystemApp {
 	class Booking {
@@ -9,7 +10,7 @@ namespace AirlineReservationSystemApp {
 		Flight fl;
 		Passenger pa;
 		Booking() = default;
-		Booking( Flight fl,Passenger pa, std::string source, std::string destination);
+		Booking( Flight fl,Passenger pa);
 
 		/*int getPnrNumber();
 		void setPnrNumber(int pnrNumber);*/
@@ -25,16 +26,22 @@ namespace AirlineReservationSystemApp {
 		
 		
 		void displayBookingDetails();
-		void BookATicket();
+
+
+		void bookATicket(int flNumber);
+
+
+		
 
 
 	private:
-		int pnrNumber = -1;
+	//nt pnrNumber = -1;
 		/*std::string passengerName;
 		int passengerAge;
 		int passengerPhoneNo;*/
 		std::string bSource;
 		std::string bDestination;
+		std::vector<Booking> nBookings;
 	/*	std::string fName;*/
 		
 		

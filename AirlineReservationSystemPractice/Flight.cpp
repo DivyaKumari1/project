@@ -5,8 +5,8 @@
 using namespace std;
 
 namespace AirlineReservationSystemApp {
-	Flight::Flight(int flNumber, std::string& flName, std::string& flSource, std::string& flDestination,
-		int flStartTime, int flDuration, int flFare)
+	Flight::Flight(const int flNumber, const std::string& flName, const std::string& flSource, const std::string& flDestination,
+		const int flStartTime, const int flDuration, const int flFare)
 	{
 		fNumber = flNumber;
 		fName = flName;

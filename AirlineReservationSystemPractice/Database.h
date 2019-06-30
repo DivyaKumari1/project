@@ -13,12 +13,12 @@ namespace AirlineReservationSystemApp {
 	class Database 
 	{
 	public:
-		Flight& addFlight(std::string& flName, std::string& flSource, std::string& flDestination,
-			int flStartTime, int flDuration, int flFare);
+		Flight& addFlight(const int flNumber,const std::string& flName, const std::string& flSource, const std::string& flDestination,
+			const int flStartTime, const int flDuration, const int flFare);
 
 		Passenger& addPassenger(std::string& firstName, std::string& lastName, int age, int phoneNumber);
 
-		Booking& addTicket(Flight fl,Passenger pa,std::string& pSource, std::string& pDestination);
+		//Booking& bookATicket(Flight theFlight, Passenger thePassenger);
 
 		
 
@@ -28,8 +28,8 @@ namespace AirlineReservationSystemApp {
 		int getFlightFare();
 		
 		void displayAllFlights();
-	    bool displaySearchedFlight(std::string& source, std::string& destination);
-
+	    bool SelectTheMatchingFlight(int flNumber);
+	
 
 
 		void DisplayBooking();

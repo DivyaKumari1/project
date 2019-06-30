@@ -4,21 +4,28 @@
 #include "Booking.h"
 #include "Passenger.h"
 #include "Flight.h"
+#include <vector>
 
 
-// database
-//-----------
+
 using namespace std;
 
 namespace AirlineReservationSystemApp {
+
+	Passenger thePassenger;
 	Flight theFlight;
-	Flight& Database::addFlight(std::string& flName, std::string& flSource, std::string& flDestination,
-		int flStartTime, int flDuration, int flFare)
+
+
+	Flight& Database::addFlight(const int flNumber, const std::string& flName, const std::string& flSource, const std::string& flDestination,
+		const int flStartTime, const int flDuration, const int flFare)
 	{
+
 		Flight theFlight(kNextFlightNumber++, flName, flSource, flDestination, flStartTime, flDuration, flFare);
 		nFlights.push_back(theFlight);
 		return theFlight;
 	}
+
+	
 
 	Passenger& Database::addPassenger(std::string& firstName, std::string& lastName, int age, int phoneNumber)
 	{
@@ -28,47 +35,34 @@ namespace AirlineReservationSystemApp {
 
 	}
 
-	/*Booking& Database::addTicket(Flight fl, Passenger pa, std::string source, std::string destination)
+
+
+
+	//displaySearchedFlight(pSource, pDestination);
+
+
+
+
+
+
+
+
+	void Database::DisplayBooking()
 	{
-		
-	
-		Booking theBooking(fl,pa,source,destination);
-	bool x=	displaySearchedFlight(source, destination);
-	if (x==true)
-	{
-		Booking theBooking(fl,pa,source,destination);
-		
-		nBookings.push_back(theBooking);
-		
-
-	}
-		*/
-		
-		//displaySearchedFlight(pSource, pDestination);
-		
-		
-
-		return theBooking;
-	}
-
-	
-
-	/*void Database:: DisplayBooking()
-	{
-		for(auto& booking : nBookings)
+		for (auto& booking : nBookings)
 		{
 			booking.displayBookingDetails();
 
 		}
 
-	}*/
+	}
 
 	void Database::DisplayAllPassengers()
 	{
-		for  (auto& passenger : nPassengers)
+		for (auto& passenger : nPassengers)
 		{
 			passenger.display();
-			
+
 
 
 		}
@@ -82,34 +76,33 @@ namespace AirlineReservationSystemApp {
 		}
 	}
 
-	bool Database::displaySearchedFlight(std::string& source, std::string& destination)
+	bool Database::SelectTheMatchingFlight(int flNumber)
 	{
 		for (auto& flight : nFlights) {
-			if (flight.getFlightSource()== source && flight.getFlightDestination()==destination)
+			if (flight.getFlightNumber() == flNumber)
 			{
-				cout << "Ticket is available! " << endl;
+				cout << "Your Ticket is Booked successfully in following flight! " << endl;
+				
+				
 				flight.display();
 				//cout << "Ticket is booked successfully! " << endl;
 				return true;
 
 			}
 			else
-			
-				{
-					cout << "Ticket is not available!" << endl;
-					return false;
-				}
-			
-			
+
+			{
+				//cout << "Ticket is not available!" << endl;
+				return false;
+			}
+
+
 		}
 		return true;
-		
-		
-			
-
 	}
+}
 	
 	
 
 	
-}
+

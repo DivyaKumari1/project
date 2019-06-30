@@ -5,8 +5,8 @@ namespace AirlineReservationSystemApp {
 	class Flight {
 	public:
 		Flight() = default;
-		Flight(int flNumber, std::string& flName, std::string& flSource, std::string& flDestination,
-			int flStartTime, int flDuration, int flFare);
+		Flight(const int flNumber, const std::string& flName, const std::string& flSource, const std::string& flDestination,
+			const int flStartTime, const int flDuration, const int flFare);
 
 		int getFlightNumber();
 		void setFlightNumber(int flightNumber);
@@ -20,7 +20,7 @@ namespace AirlineReservationSystemApp {
 		
 
 	private:
-		int fNumber = -1;
+		int fNumber;
 		std::string fName;
 		std::string fSource;
 		std::string fDestination;
